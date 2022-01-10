@@ -1,0 +1,23 @@
+<h2>Productos</h2>
+
+<% if(productos.length>0){ %>
+    <table id='tabla'>
+    <tr>
+        <td>Nombre</td>
+        <td>Precio</td>
+        <td>Imagen</td>
+    </tr>
+    <%productos.forEach(function(producto) {%>
+    <tr>
+        <td class={{this.id}}><%=producto.Nombre%></td>
+        <td class={{this.id}}><%=producto.Precio%></td>
+        <td class={{this.id}}><%=producto.Url%></td>
+    </tr>
+        
+    <%});%>
+</table>
+<% } else{ %>
+    <h3 class="alert alert-danger">no se encontraron datos</h1>
+<% } %>
+
+
