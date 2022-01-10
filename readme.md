@@ -5,4 +5,7 @@
 
 - El formulario se carga y envia  a  productos para actualizar la tabla
 
-- Se genero 
+- Se genero chat con websocket
+
+
+- Se guardan los mensajes en un archivo llamado "mensajes.txt" para que queden almacenados en el servidor y recuperarlos si se quisiese.
