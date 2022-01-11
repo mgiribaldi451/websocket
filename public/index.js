@@ -33,7 +33,10 @@ function render(data) {
 }
 
 function addMessage(e) { 
-    let mensaje = { 
+  if(isValidEmail(document.getElementById('username').value)){
+
+  
+  let mensaje = { 
       author: document.getElementById('username').value, 
       text: document.getElementById('texto').value
     }; 
@@ -43,6 +46,10 @@ function addMessage(e) {
     document.getElementById('texto').focus()
 
     return false;
+  }
+  else{
+    return alert("Mail mal ingresado")
+  }
 }
 
 function renderProd(data){
@@ -69,4 +76,8 @@ function addProduct(e) {
     
 
     return false;
+}
+
+function isValidEmail(mail) { 
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail); 
 }
