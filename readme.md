@@ -1,17 +1,16 @@
+Practico Websocket
 
-- Iniciar el proyecto
 
-- ejecuta el comando npm install para que instale todas las dependencias
+Pre - requisitos
 
 - Dependencias utilizadas: 
--   "dependencies": {
+   "dependencies": {
     "cross-fetch": "^3.1.4",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "fs-js": "^1.0.6",
     "node-fetch": "^3.1.0",
     "nodemon": "^2.0.15",
-    "pug": "^3.0.2",
     "socket.io": "^4.4.1"
   },
 
