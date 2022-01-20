@@ -1,9 +1,19 @@
-Practico Websocket
+# Practico Websocket
+<p> Esta es la entrega del practico de "websockets" , el mismo cuenta con chat y el servidor guarda en un archivo de texto todos los mensajes enviados. Tambien cuenta con un formulacion para cargar productos y se muestran en tiempo real las cargas.</p>
+
+## Comenzando
+<p>
+ Clonar el repositorio:
+- git clone https://github.com/mgiribaldi451/websocket
+
+Tambien se puede descargar desde el navegador.
+Una vez clonado se deben instalar las dependencias e iniciar el servidor.
+</p>
 
 
-Pre - requisitos
+## Pre - requisitos
 
-- Dependencias utilizadas: 
+<p> Dependencias utilizadas: 
    "dependencies": {
     "cross-fetch": "^3.1.4",
     "ejs": "^3.1.6",
@@ -12,101 +22,28 @@ Pre - requisitos
     "node-fetch": "^3.1.0",
     "nodemon": "^2.0.15",
     "socket.io": "^4.4.1"
-  },
+  } </p>
 
-  - Ejecucion:
+## Instlacion
 
-    Path> nodemon server.js
+- Path> npm install
 
+## Ejecucion
 
-- Funcionalidades del codigo
-
-
-- Se genero variable "productos" como array de objetos para tener algunos valores precargados.
-    Luego todos los producstos cargados en el form se iran a ir agregando y mostrando por el websocket
-
-- Se uso EJS como plantillas
-
-- El formulario se carga y envia  a  productos para actualizar la tabla
-
-- Se genero chat con websocket
+- Path> nodemon server.js
 
 
-- Se guardan los mensajes en un archivo llamado "mensajes.txt" para que queden almacenados en el servidor y recuperarlos si se quisiese.
+## Ejecutando las pruebas ⚙️
 
+<p>
+Una vez lanzado el servidor podemos probarlo en local desde el navegador en la direccionn localhost:3000.
+El mismo nos mostrara un formulario para la carga de productos , productos precargados y un chat en el que se debera ingresar un mail para empezar a utilizarlo. Puede contener varios clientes al mismo tiempo y todos veran las respuesta al formulario y el chat en tiempo real, solo debe llenarse el form o escribir algo por el chat.
+</p>
 
+# Repositorio
 
+- https://github.com/mgiribaldi451/websocket
 
- - Index.js
+## Autor
 
- - se utiliza para ser el clado del cliente del websocket que se comunica con el servidor , se implementa tanto como para mensajes , como tambien para la tabla de productos
-
-
- - socket.on('messages', function(data) { 
-  console.log(data);
-  render(data);
-- });
-
-- socket.on('product', function(data) { 
--    console.log(data);
--    renderProd(data);
--  });
-
-
-
-- Variable productos solo a moda de inicializar la tabla de productos con algo y luego se van sumando los que se vayan cargando por el form.
-
-- let productos = [
-
-    {
-        "id": 1,
-        "Nombre": "inter",
-        "Url": "https://i.ibb.co/dgjzjvK/images-q-tbn-ANd9-Gc-TUtrjy-hxo-S7itymm994-PWb1-o-SLUZMo38-Fg-usqp-CAU.jpg",
-        "Precio": 2000
-    },
-    {
-        "id": 2,
-        "Nombre": "defensa y justicia",
-        "Url": "https://i.ibb.co/WBzHNLv/images-q-tbn-ANd9-Gc-Rxu-I5t-AXdtt-Izamd-RH9-AMzkt-WTbk-Opk-TRk-Jg-usqp-CAU.jpg",
-        "Precio": 1500
-
-    },
-    {
-        "id": 3,
-        "Nombre": "atletico madrid",
-        "Url": "https://i.ibb.co/Z2zDQ6y/images-q-tbn-ANd9-Gc-Re-FPQu-FEjev-D6-YS2-NTIug-Fx-X-fsjkr-Jucp-BQ-usqp-CAU.jpg",
-        "Precio": 2500
-    }
-- ]
-
-
-
-- Se genera class contenedor para guardar los mensajes enviados por todos los clientes en un archivo "mensaje.txt" por si mas adelante se utilizaria.
-
- - class Contenedor {
-
-    constructor(file) {
-
-        this.archivo = file;
-    }
-
-    async save(obj) {
-        try {
-
-            const contenido = await fs.promises.readFile(`./${this.archivo}`, 'utf-8')
-                let archivo = JSON.parse(contenido)
-                archivo = [...archivo, obj];
-                try {
-                    archivo = JSON.stringify(archivo);
-                    await fs.promises.writeFile(`./${this.archivo}`, archivo);
-                }
-                catch (err) {
-                    console.log(`Error: ${err}`);
-                }
-            }
-        catch (err) {
-            console.log(`Error: ${err}`);
-        }
-
-    }
-- }
+- Matias Giribaldi
